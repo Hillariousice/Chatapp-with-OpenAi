@@ -13,11 +13,17 @@ import {
     handleSubmit,
     appendText,
     handleKeyDown,
+    streamingText,
   }) => {
     const [preview, setPreview] = useState("");
   
     return (
       <div className="message-form-container">
+        {streamingText && (
+          <div className="message-form-streaming">
+            <b>Bot: </b> {streamingText}
+          </div>
+        )}
         {preview && (
           <div className="message-form-preview">
             <img
